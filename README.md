@@ -1,7 +1,7 @@
 # mk-nurture
-Child Theme for the Beans Framework
+A Beans Child Theme - experiment in progress
 
-The most innovative WordPress theme
+Beans = The most innovative WordPress theme
 
 Beans is an incredibly powerful and flexible WordPress theme.
 Light weight, innovative, modern and unbelievably fast. 
@@ -14,6 +14,8 @@ http://www.getbeans.io/
 http://www.getbeans.io/documentation/
 
 https://community.getbeans.io/forum/support/
+
+https://twitter.com/BeansPress
 
 https://github.com/Getbeans/Beans
 
