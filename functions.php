@@ -177,7 +177,6 @@ function mk_post_image_small_args( $args ) {
 }
 
 // Checking which UIkit components are loading. Fancy.
-// Issues: not displaying.
 add_action( 'beans_body_append_markup', 'example_fancy_uikit_components' );
 
 function example_fancy_uikit_components() {
