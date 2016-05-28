@@ -81,6 +81,158 @@ function smooth_scroll_enqueue_uikit_assets() {
 beans_add_attribute( 'beans_body', 'id', 'mk-top' );
 // beans_add_attribute( 'tm_header_bar', 'id', 'mk-top' );
 
+// Hero Area
+
+add_action( 'widgets_init', 'beans_child_widgets_init' );
+
+function beans_child_widgets_init() {
+
+    beans_register_widget_area( array(
+        'name' => 'Hero',
+        'id' => 'hero',
+        'description' => 'Widgets in this area will be shown in the hero section as a grid.',
+        'beans_type' => 'grid'
+    ) );
+
+}
+
+add_action( 'beans_main_grid_before_markup', 'beans_child_hero_widget_area' );
+
+function beans_child_hero_widget_area() {
+
+	echo beans_widget_area( 'hero' );
+		
+}
+
+
+// Widget Area: CTA.
+
+add_action( 'widgets_init', 'cta_widget_area' );
+
+function cta_widget_area() {
+
+    beans_register_widget_area( array(
+        'name' => 'CTA',
+        'id' => 'cta',
+        'beans_type' => 'grid'
+    ) );
+
+}
+
+// Display the CTA widget area in the front end.
+
+add_action( 'beans_footer_before_markup', 'cta_footer_widget_area' );
+
+function cta_footer_widget_area() {
+
+	?>
+	<div class="tm-mega-footer uk-block">
+		<div class="uk-container uk-container-center">
+			<?php echo beans_widget_area( 'cta' ); ?>
+		</div>
+	</div>
+	<?php
+
+}
+
+
+// Widget Area: Footer Top.
+
+add_action( 'widgets_init', 'ftop_widget_area' );
+
+function ftop_widget_area() {
+
+    beans_register_widget_area( array(
+        'name' => 'Footer',
+        'id' => 'ftop',
+        'beans_type' => 'grid'
+    ) );
+
+}
+
+
+// Display the Footer Top widget area in the front end.
+
+add_action( 'beans_footer_before_markup', 'ftop_footer_widget_area' );
+
+function ftop_footer_widget_area() {
+
+	?>
+	<div class="tm-mega-footer uk-block">
+		<div class="uk-container uk-container-center">
+			<?php echo beans_widget_area( 'ftop' ); ?>
+		</div>
+	</div>
+	<?php
+
+}
+
+
+// Widget Area: Footer Middle / Menu
+
+add_action( 'widgets_init', 'fmid_widget_area' );
+
+function fmid_widget_area() {
+
+    beans_register_widget_area( array(
+        'name' => 'Footer Middle',
+        'id' => 'fmid',
+        'beans_type' => 'grid'
+    ) );
+
+}
+
+// Add the menu area for the Middle Footer
+
+add_action( 'beans_footer_before_markup', 'fmid_footer_menu' );
+
+function fmid_footer_menu() {
+
+    ?>
+    <div class="tm-mega-footer uk-block">
+        <div class="uk-container uk-container-center">
+            <?php 
+            wp_nav_menu( array( 
+                'menu' => 'Footer Middle Menu',
+                'menu_class' => 'uk-subnav uk-subnav-line',
+                'container' => 'div',
+                'container_class' => 'uk-align-medium-right',
+                'theme_location' => 'fmid-menu',
+                'beans_type' => 'navbar'
+            ) ); 
+            ?>
+        </div>
+    </div>
+    <?php
+
+}
+
+// Register and initialize the Middle Footer menu
+
+function register_fmid_menu() {
+
+    register_nav_menu( 'fmid-menu',__( 'Footer Middle Menu' ) );
+
+}
+
+add_action( 'init', 'register_fmid_menu' );
+
+// 9.5 Display the Middle Footer Widget area in the front-end
+
+add_action( 'beans_footer_before_markup', 'fmid_widget_area' );
+
+function fmid_footer_widget_area() {
+
+    ?>
+    <div class="tm-mega-footer uk-block">
+        <div class="uk-container uk-container-center">
+            <?php echo beans_widget_area( 'fmid' ); ?>
+        </div>
+    </div>
+    <?php
+
+}
+
 // Replace default Footer Content.
 beans_modify_action_callback( 'beans_footer_content', 'beans_child_footer_content' );
 function beans_child_footer_content() {
