@@ -1,0 +1,89 @@
+/*
+ * In this file, you may style your site using CSS or LESS as well as overwrite UIkit LESS variables.
+ * Make sure to enable development mode via the Admin->Appearance->Settings option while working on your website. LESS will then be processed on the fly.
+ */
+ 
+ // Variables modifiers
+// ========================================================================
+
+@navbar-nav-padding-horizontal:                 20px;
+@navbar-nav-color:                              @global-link-color;
+@navbar-nav-font-weight:                        300;
+@navbar-nav-hover-background:                   transparent;
+@navbar-nav-hover-color:                        @global-link-hover-color;
+@navbar-nav-onclick-background:                 transparent;
+@navbar-nav-onclick-color:                      @global-link-hover-color;
+@navbar-nav-active-background:                  transparent;
+@navbar-nav-active-color:                       @global-link-hover-color;
+@navbar-nav-font-size:                          12px;
+@navbar-nav-font-weight:                        normal;
+
+/* Navbar modifiers
+ ========================================================================== */
+
+.hook-navbar-nav() {
+  text-transform: uppercase;
+}
+
+/* Adjust the menu position */
+nav.tm-primary-menu {
+  position: relative;
+  /* top: 2px; */
+  top: 12px;
+}
+
+/* Add dropdown icon */
+.uk-navbar-nav > li[data-uk-dropdown] > a i {
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+  /* top: 27px; */
+  top: 37px;
+}
+
+/* Nav dropdown modifiers
+ ========================================================================== */
+
+.uk-dropdown-navbar {
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+}
+
+/* Dropdown modifiers
+ ========================================================================== */
+
+.hook-dropdown() {
+    border-radius: @global-border-radius;
+}
+
+// Variables
+// ========================================================================
+
+@dropdown-navbar-background:                    #fff;
+
+
+/* Dropdown modifiers
+ ========================================================================== */
+
+.hook-dropdown-navbar {
+	border-bottom: 1px solid @global-primary-background;
+	background-color: #fff;
+
+	.uk-nav {
+		margin-top: -@dropdown-padding;
+		margin-bottom: -@dropdown-padding;
+	}
+
+	.uk-nav a {
+		color: @base-link-color;
+		padding-top: 9px;
+		padding-bottom: 9px;
+
+		&:hover,
+		&:active {
+			color: @base-link-color;
+			background-color: #fff;
+		}
+
+	}
+
+}
