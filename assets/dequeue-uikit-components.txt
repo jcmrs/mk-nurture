@@ -1,0 +1,9 @@
+// Dequeue UIKit Components not in use.
+add_action( 'beans_uikit_dequeue_components', 'mk_dequeue_uikit_components', 15 );
+
+function my_function_name() {
+
+	beans_uikit_dequeue_components( array( 'alert, overlay' ) );
+	beans_uikit_dequeue_components( array( 'tooltip' ), 'add-ons' );
+	
+}

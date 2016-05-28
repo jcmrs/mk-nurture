@@ -1,0 +1,32 @@
+// Changing Logo for screens > 960px
+beans_add_attribute( 'beans_site_branding', 'class', 'uk-visible-large' );
+
+add_action( 'beans_site_branding_after_markup', 'example_large_mobile_logo' );
+
+function example_large_mobile_logo() {
+
+    ?><img class="uk-hidden-small uk-hidden-medium" src="https://mk-beans-jcmrs.c9users.io/wp-content/uploads/logo-default.png" alt=""><?php
+
+}
+
+// Changing Logo for screens 768px - 960px
+beans_add_attribute( 'beans_site_branding', 'class', 'uk-visible-medium' );
+
+add_action( 'beans_site_branding_after_markup', 'example_medium_mobile_logo' );
+
+function example_medium_mobile_logo() {
+
+    ?><img class="uk-hidden-small uk-hidden-large" src="https://mk-beans-jcmrs.c9users.io/wp-content/uploads/logo-medium.png" alt=""><?php
+
+}
+
+// Changing Logo for screens 480px - 768px
+beans_add_attribute( 'beans_site_branding', 'class', 'uk-visible-small' );
+
+add_action( 'beans_site_branding_after_markup', 'example_small_mobile_logo' );
+
+function example_small_mobile_logo() {
+
+    ?><img class="uk-hidden-medium uk-hidden-large" src="https://mk-beans-jcmrs.c9users.io/wp-content/uploads/logo-small.png" alt=""><?php
+
+}

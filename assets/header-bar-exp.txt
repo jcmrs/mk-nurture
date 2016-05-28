@@ -1,0 +1,48 @@
+// Removing the site branding
+beans_remove_action( 'beans_site_title_tag' );
+
+// Add Header Bar
+beans_add_smart_action( 'beans_header_before_markup', 'header_bar' );
+
+// Style beans_site_title_tag
+beans_remove_markup( 'beans_site_title_tag' );
+
+function header_bar() {
+
+	?>
+	<div class="tm-header-bar uk-block-primary uk-contrast">
+		
+		
+		<div class="uk-container uk-container-center uk-text-contrast uk-text-justify">
+			
+			<div class="uk-grid" data-uk-grid-match>
+    			<div class="uk-width-large-1-2 uk-width-medium-1-2">
+    				<i class="uk-icon-small uk-icon-justify uk-contrast uk-icon-quote-left uk-align-left"></i>
+    				<?php echo beans_site_title_tag(); ?>
+    			</div>
+    			<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-hidden-small">
+    				<i class="uk-icon-small uk-icon-justify uk-contrast uk-icon-phone"></i><a href="#"> Phone</a>
+    				<i class="uk-icon-small uk-icon-justify uk-contrast uk-icon-fax"></i><a href="#"> Fax</a>
+    				<i class="uk-icon-small uk-icon-justify uk-contrast uk-icon-envelope-o"></i><a href="#"> Email</a>
+    			</div>
+			</div>
+			
+			
+		</div>
+		
+	</div>
+	<?php
+
+}
+
+
+.tm-header-bar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*background-color: #18517F;*/
+}
+
+.tm-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

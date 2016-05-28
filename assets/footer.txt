@@ -1,0 +1,16 @@
+// Replace default Footer Content.
+beans_modify_action_callback( 'beans_footer_content', 'beans_child_footer_content' );
+function beans_child_footer_content() {
+
+    ?>
+    <div class="uk-grid uk-container-center uk-text-small" data-uk-grid-margin>
+        <div class="uk-width-large-2-3 uk-width-small-1-2 uk-text-center">
+            <p class="uk-text-muted">Copyright | Privacy | Sitemap</p>
+        </div>
+
+        <div class="uk-width-large-1-3 uk-width-small-1-2 uk-text-center uk-clearfix">
+            <p class="uk-text-muted">QuickLinks? Top?</a></p>
+        </div>
+    </div>
+    <?php
+}

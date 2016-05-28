@@ -1,0 +1,47 @@
+// Register widget areas.
+add_action( 'widgets_init', 'beans_child_widget_areas' );
+
+function beans_child_widget_areas() {
+
+    beans_register_widget_area( array(
+        'name' => 'Primary Off-canvas',
+        'id' => 'primary_offcanvas',
+        'beans_type' => 'offcanvas'
+    ) );
+
+    beans_register_widget_area( array(
+        'name' => 'Secondary Off-canvas',
+        'id' => 'secondary_offcanvas',
+        'beans_type' => 'offcanvas'
+    ) );
+
+}
+
+// Example: Off-Canvas buttons. Before main grid. Useful in page templates?
+add_action( 'beans_main_grid_before_markup', 'beans_child_view_offcanvas_buttons' );
+
+function beans_child_view_offcanvas_buttons() {
+
+    ?>
+    <div class="uk-margin-bottom">
+        <a class="uk-button" href="#primary_offcanvas" data-uk-offcanvas><i class="uk-icon-bars uk-margin-small-right"></i> Primary Offcanvas</a>
+        <a class="uk-button" href="#secondary_offcanvas" data-uk-offcanvas><i class="uk-icon-bars uk-margin-small-right"></i> Secondary Offcanvas</a>
+    </div>
+    <?php
+
+}
+
+// Add the off-canvas widget area afther the site closing markup "cause of Above the Fold".
+// External content?
+add_action( 'beans_site_after_markup', 'beans_child_view_offcanvas' );
+
+function beans_child_view_offcanvas() {
+
+    echo beans_widget_area( 'primary_offcanvas' );
+    echo beans_widget_area( 'secondary_offcanvas' );
+
+}
+
+// Add uk-offcanvas-bar-flip to the secondary off-canvas so that it opens from the right.
+// Why no top/down.
+beans_add_attribute( 'beans_widget_area_offcanvas_bar[_secondary_offcanvas]', 'class', 'uk-offcanvas-bar-flip' );

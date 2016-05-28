@@ -1,0 +1,27 @@
+// Add Back to Top.
+// Example: <a class="example-top uk-button" href="#example-top" title="Scroll to top" data-uk-smooth-scroll><i class="uk-icon-arrow-up"></i></a>
+// Example: <a class="example-top uk-button" href="#example-top" title="Terug naar boven" data-uk-smooth-scroll><i class="uk-icon-arrow-up"></i> Top
+beans_add_attribute( 'beans_body', 'id', 'example-top' );
+
+// Add Back to Top below tm-content
+add_action( 'beans_post_after_markup', 'mk_top_quicklink' );
+
+function mk_top_quicklink() {
+	
+	?>
+	<div class="uk-container uk-container-center uk-block-primary uk-text-justify">
+			
+		<div class="uk-grid" data-uk-grid-match data-uk-margin>
+    		<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-text-primary uk-text-middle uk-text-left uk-text-center-small uk-text-break">
+    			<?php echo beans_site_title_tag(); ?>
+    		</div>
+    		<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-text-right uk-text-middle uk-text-center-small">
+    			<a href="tel:1-408-555-5555">Call now to get your beans!</a>
+    		</div>
+		</div>
+			
+			
+	</div>
+	<?php
+
+}

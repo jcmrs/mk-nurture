@@ -1,0 +1,34 @@
+<?php
+/* Template Name: Section Page Template */
+
+// Do all your page template modification here.
+
+// Include Beans. Do not remove the line below. Required yes/no?
+require_once( get_template_directory() . '/lib/init.php' );
+
+// Force a layout
+add_filter( 'beans_layout', 'beans_child_force_layout');
+
+function beans_child_force_layout() {
+	
+	// Right Sidebar
+	return 'c_sp';
+}
+
+// Registering Post Meta
+// hero (featured image)
+// intro (excerpt)
+// buttons (Jumplinks) (array?)
+// button (secondary-off-canvas)
+
+// https://community.getbeans.io/discussion/how-to-create-page-template/
+// https://community.getbeans.io/discussion/how-do-i-build-a-page-structure/
+// https://community.getbeans.io/discussion/custom-post-types/
+// https://community.getbeans.io/discussion/force-layout-with-custom-sidebar/
+// does not compute - yet
+
+
+
+
+// Load Beans document.
+beans_load_document();

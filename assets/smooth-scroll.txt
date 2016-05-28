@@ -1,0 +1,9 @@
+// Add Smooth Scroll.
+add_action( 'beans_uikit_enqueue_scripts', 'example_enqueue_uikit_assets' );
+
+function example_enqueue_uikit_assets() {
+
+    beans_uikit_enqueue_components( array( 'smooth-scroll' ) );
+    beans_compiler_add_fragment( 'uikit', get_stylesheet_directory() . '/style.less', 'less' );
+
+}

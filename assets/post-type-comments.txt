@@ -1,0 +1,8 @@
+// Remove page post type comment support. add_action versus add_smart_action?
+beans_add_smart_action( 'init', 'example_post_type_support' );
+
+function example_post_type_support() {
+
+	remove_post_type_support( 'post', 'page', 'comments' );
+
+}
