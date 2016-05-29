@@ -9,7 +9,7 @@ function example_hero() {
     ?>
     <div class="tm-hero uk-block-large">
         <div class="uk-container uk-container-center uk-text-center">
-            <!-- Your hero content -->
+            <!-- Your hero content here -->
         </div>
     </div>
     <?php
