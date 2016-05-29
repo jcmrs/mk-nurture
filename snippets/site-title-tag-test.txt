@@ -1,0 +1,21 @@
+// Itemprop function test for beans_site_title_tag
+// Removing the site title tag.
+beans_remove_action( 'beans_site_title_tag' );
+
+// new function for site title tag
+function mk_site_title_tag() {
+
+	// Stop here if there isn't a description.
+	if ( !$description = get_bloginfo( 'description' ) )
+		return;
+
+	echo beans_open_markup( 'beans_site_title_tag', 'span', array(
+		'class' => 'tm-site-title-tag uk-text-small uk-text-muted uk-display-block',
+		'itemprop' => 'description'
+	) );
+
+		echo beans_output( 'beans_site_title_tag_text', $description );
+
+	echo beans_close_markup( 'beans_site_title_tag', 'span' );
+
+}
