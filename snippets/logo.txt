@@ -1,0 +1,13 @@
+beans_modify_action_callback( 'beans_site_branding', 'mk_logo' );
+
+function mk_logo() {
+
+    ?>
+    <picture>
+        <source media="(max-width: 480px)" srcset="https://mk-beans-jcmrs.c9users.io/wp-content/uploads/logo-small.png">
+        <source media="(max-width: 960px)" srcset="https://mk-beans-jcmrs.c9users.io/wp-content/uploads/logo-medium.png">
+        <img src="https://mk-beans-jcmrs.c9users.io/wp-content/uploads/logo-default.png" alt="JCMRS logo">
+    </picture>
+    <?php
+
+}
